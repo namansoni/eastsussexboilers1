@@ -1,6 +1,10 @@
-import 'package:flutter/material.dart';
+import 'package:eastsussexboilers1/Screens/Home.dart';
+import 'package:eastsussexboilers1/providers/drawerProvider.dart';
 
-import 'home.dart';
+import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+
+import 'Utils/theme.dart';
 
 void main() {
   runApp(MyApp());
@@ -14,8 +18,14 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Home(),
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider.value(value: DrawerProvider()),
+      ],
+      child: MaterialApp(
+        theme: Theme1().themeData,
+        home: Home(),
+      ),
     );
   }
 }
