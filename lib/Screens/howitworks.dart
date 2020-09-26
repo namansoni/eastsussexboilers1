@@ -1,4 +1,5 @@
 import 'package:animate_do/animate_do.dart';
+import 'package:eastsussexboilers1/Screens/getQuoteWebview.dart';
 import 'package:flutter/material.dart';
 
 class HowItWorks extends StatefulWidget {
@@ -59,7 +60,11 @@ class _HowItWorksState extends State<HowItWorks> {
                     left: MediaQuery.of(context).size.width / 2 - 75),
                 child: RaisedButton(
                     elevation: 10,
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.of(context).push(MaterialPageRoute(
+                        builder: (context) => GetQuoteWebview(),
+                      ));
+                    },
                     child: Text(
                       "Get Quote",
                       style: TextStyle(color: Colors.white),

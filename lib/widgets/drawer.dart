@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:eastsussexboilers1/Screens/contactuswebview.dart';
 import 'package:eastsussexboilers1/Screens/getQuoteWebview.dart';
 import 'package:eastsussexboilers1/providers/drawerProvider.dart';
 import 'package:flutter/material.dart';
@@ -29,7 +30,10 @@ class _Drawer1State extends State<Drawer1> {
                     Navigator.of(context).pop();
                   });
                 },
-                leading: Icon(Icons.home),
+                leading: Icon(
+                  Icons.home,
+                  color: Color.fromRGBO(227, 77, 92, 1),
+                ),
                 title: Text("Home"),
               ),
             ),
@@ -43,7 +47,10 @@ class _Drawer1State extends State<Drawer1> {
                     Navigator.of(context).pop();
                   });
                 },
-                leading: Icon(Icons.info_outline),
+                leading: Icon(
+                  Icons.info_outline,
+                  color: Color.fromRGBO(227, 77, 92, 1),
+                ),
                 title: Text("About Us"),
               ),
             ),
@@ -57,7 +64,10 @@ class _Drawer1State extends State<Drawer1> {
                     Navigator.of(context).pop();
                   });
                 },
-                leading: Icon(Icons.message),
+                leading: Icon(
+                  Icons.message,
+                  color: Color.fromRGBO(227, 77, 92, 1),
+                ),
                 title: Text("FAQ"),
               ),
             ),
@@ -71,7 +81,10 @@ class _Drawer1State extends State<Drawer1> {
                     Navigator.of(context).pop();
                   });
                 },
-                leading: Icon(Icons.work),
+                leading: Icon(
+                  Icons.work,
+                  color: Color.fromRGBO(227, 77, 92, 1),
+                ),
                 title: Text("How It Works"),
               ),
             ),
@@ -79,12 +92,35 @@ class _Drawer1State extends State<Drawer1> {
               color: drawerProider.index == 4 ? Colors.grey : null,
               child: ListTile(
                 onTap: () {
+                  Provider.of<DrawerProvider>(context, listen: false)
+                      .changeIndex(4);
                   Navigator.of(context).push(MaterialPageRoute(
                     builder: (context) => GetQuoteWebview(),
                   ));
                 },
-                leading: Icon(Icons.adjust),
+                leading: Icon(
+                  Icons.adjust,
+                  color: Color.fromRGBO(227, 77, 92, 1),
+                ),
                 title: Text("Get Quote"),
+              ),
+            ),
+            Container(
+              color: drawerProider.index == 5 ? Colors.grey : null,
+              child: ListTile(
+                onTap: () {
+                  Provider.of<DrawerProvider>(context, listen: false)
+                      .changeIndex(5);
+
+                  Navigator.of(context).push(MaterialPageRoute(
+                    builder: (context) => ContactusWebView(),
+                  ));
+                },
+                leading: Icon(
+                  Icons.contact_phone,
+                  color: Color.fromRGBO(227, 77, 92, 1),
+                ),
+                title: Text("Contact Us"),
               ),
             ),
           ],
