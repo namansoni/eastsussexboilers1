@@ -22,41 +22,39 @@ class _FAQState extends State<FAQ> {
       child: Container(
         height: MediaQuery.of(context).size.height,
         width: MediaQuery.of(context).size.width,
-        child: SingleChildScrollView(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.start,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Row(
-                  children: [
-                    Container(
-                      width: 10,
-                      height: 30,
-                      color: Color.fromRGBO(227, 77, 92, 1),
-                    ),
-                    SizedBox(
-                      width: 10,
-                    ),
-                    Text("FAQ",
-                        style: TextStyle(
-                            fontWeight: FontWeight.bold, fontSize: 20)),
-                  ],
-                ),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Row(
+                children: [
+                  Container(
+                    width: 10,
+                    height: 30,
+                    color: Color.fromRGBO(227, 77, 92, 1),
+                  ),
+                  SizedBox(
+                    width: 10,
+                  ),
+                  Text("FAQ",
+                      style: TextStyle(
+                          fontWeight: FontWeight.bold, fontSize: 20)),
+                ],
               ),
-              Container(
-                height: 100,
-                child: ListView.builder(
-                    shrinkWrap: true,
-                    physics: ScrollPhysics(),
-                    scrollDirection: Axis.horizontal,
-                    itemBuilder: (context, index) => listtilecard(index),
-                    itemCount: category.length),
-              ),
-              categoryWiseFAQ(selectedindex)
-            ],
-          ),
+            ),
+            Container(
+              height: 100,
+              child: ListView.builder(
+                  shrinkWrap: true,
+                  physics: ScrollPhysics(),
+                  scrollDirection: Axis.horizontal,
+                  itemBuilder: (context, index) => listtilecard(index),
+                  itemCount: category.length),
+            ),
+            categoryWiseFAQ(selectedindex)
+          ],
         ),
       ),
     );
@@ -137,7 +135,7 @@ class _FAQState extends State<FAQ> {
 
     return Container(
       width: MediaQuery.of(context).size.width,
-      height: 700,
+      height:MediaQuery.of(context).size.height-150-121,
       child: ListView.builder(
           physics: ScrollPhysics(),
           itemCount: questionsAnswer.length,
