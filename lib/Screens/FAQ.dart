@@ -49,6 +49,7 @@ class _FAQState extends State<FAQ> {
                 height: 100,
                 child: ListView.builder(
                     shrinkWrap: true,
+                    physics: ScrollPhysics(),
                     scrollDirection: Axis.horizontal,
                     itemBuilder: (context, index) => listtilecard(index),
                     itemCount: category.length),

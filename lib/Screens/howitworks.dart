@@ -82,9 +82,13 @@ class _HowItWorksState extends State<HowItWorks> {
           padding: const EdgeInsets.all(8.0),
           child: Image.asset(imagePath),
         ),
-        Text(
-          title,
-          style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
+        Container(
+          width: MediaQuery.of(context).size.width * 0.7,
+          child: Text(
+            title,
+            textAlign: TextAlign.center,
+            style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
+          ),
         )
       ],
     );
